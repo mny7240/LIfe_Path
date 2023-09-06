@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Calender;
+use App\Models\Calendar;
 
-class CalenderController extends Controller
+class CalendarController extends Controller
 {
-    public function index(Calender $calendar)
+    public function index(Calendar $calendar)
     {
         return $calendar->get();
     }

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calender__places', function (Blueprint $table) {
+        Schema::create('calendar__things', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calender__places');
+        Schema::dropIfExists('calendar__things');
     }
 };

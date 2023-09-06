@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Calender_Thing extends Model
+class Calendar_Diary extends Model
 {
     use HasFactory;
 }
