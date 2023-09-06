@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CalenderController;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calendar',[CalenderController::class, 'index']);
+Route::get('/calendar',[CalendarController::class, 'index']);
+Route::get('/calendardiary',[CalendarDiaryController::class, 'index']);
+Route::get('/calendarplace',[CalendarPlaceController::class, 'index']);
+Route::get('/calendartask',[CalendarTaskController::class,'index']);
+Route::get('/calendarthing',[CalendarThingController::class,'index']);
+Route::get('/diary',[DiaryController::class,'index']);
+Route::get('/place',[PlaceController::class,'index']);
+Route::get('/task',[TaskController::class,'index']);
+Route::get('/thing',[ThingController::class,'index']);
