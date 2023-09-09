@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\MypageController;
+use App\Http\Controllers\MyIntroductionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calendar',[CalendarController::class, 'index']);
+Route::get('/',[CalendarController::class,'index']);
+Route::get('/mypage',[MypageController::class,'index']);
+Route::get('/calendar/edit',[MypageController::class,'edit']);
 Route::get('/calendardiary',[CalendarDiaryController::class, 'index']);
 Route::get('/calendarplace',[CalendarPlaceController::class, 'index']);
 Route::get('/calendartask',[CalendarTaskController::class,'index']);

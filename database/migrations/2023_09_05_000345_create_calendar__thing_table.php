@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calendars', function (Blueprint $table) {
+        Schema::create('calendar__thing', function (Blueprint $table) {
             $table->id(); // プライマリキー
-            $table->date('time_date');
+            $table->integer('thing_id');
             $table->unsignedBigInteger('calendar_id'); // 外部キー
             
             // 外部キー制約
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendars');
+        Schema::dropIfExists('calendar__thing');
     }
 };
