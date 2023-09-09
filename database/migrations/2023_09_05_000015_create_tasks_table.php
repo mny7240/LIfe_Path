@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // プライマリキー
+            $table->bool('executed_status');
+            $table->string('title');
+            $table->string('content');
+            $table->string('category');
+            $table->date('created_at');
+            $table->date('updated_at');
+            $table->int('co_user_id');
+            $table->unsignedBigInteger('user_id'); // 外部キー
+            
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

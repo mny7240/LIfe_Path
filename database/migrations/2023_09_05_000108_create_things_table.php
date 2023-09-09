@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('things', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // プライマリキー
+            $table->string('want');
+            $table->unsignedBigInteger('user_id'); // 外部キー
+            
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

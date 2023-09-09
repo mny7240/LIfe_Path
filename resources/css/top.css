@@ -1,0 +1,43 @@
+/* カレンダー全体のスタイリング */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+/* カレンダーの見出しスタイル */
+thead {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* 日曜日のセルを赤く強調表示 */
+th:nth-child(1) {
+    color: red;
+}
+
+/* 土曜日のセルを青く強調表示 */
+th:nth-child(7) {
+    color: blue;
+}
+
+/* 日付セルのマウスオーバー時のスタイル */
+td:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* イベントがある日付セルをハイライト */
+/* 例: .event-date { background-color: yellow; } */
+
+/* その他のカスタマイズはここに追加 */
