@@ -9,7 +9,7 @@ class CalendarController extends Controller
 {
     public function index(Calendar $calendar)
     {
-        return view('calendar/index')->with([ 'calendar' => $calendar->get()]);
+        return view('calendar/index');
     }
 }
 ?>

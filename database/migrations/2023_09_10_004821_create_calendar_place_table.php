@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calendars', function (Blueprint $table) {
-            $table->id(); // プライマリキー
-            $table->date('time_date');
-            $table->unsignedBigInteger('calendar_id'); // 外部キー
-            
-            // 外部キー制約
+        Schema::create('calendar_place', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->unsignedBigInteger('place_id');
+            $table->unsignedBigInteger('calendar_id'); 
+            $table->foreign('place_id')->references('id')->on('places');
             $table->foreign('calendar_id')->references('id')->on('calendars');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendars');
+        Schema::dropIfExists('calendar_place');
     }
 };

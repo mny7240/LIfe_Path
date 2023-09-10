@@ -17,10 +17,10 @@
                 <h2>User Profile</h2>
             </div>
             <div class="profile-info">
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Email:</strong> john@example.com</p>
-                <p><strong>Introduction:</strong> This is my profile.</p>
-                <p><strong>Date of Birth:</strong> January 1, 1990</p>
+                <p><strong>名前:</strong>長江　愛哉</p>
+                <p><strong>Email:</strong>xxxxxxxx@gmail.com</p>
+                <p><strong>自己紹介:</strong>よろしくお願いいたします。</p>
+                <p><strong>誕生日:</strong>2002 04/27</p>
                 <div class='edit'>
                     <a href="/calendar/edit" class="button">プロフィール編集</a>
                 </div>
