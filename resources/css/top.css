@@ -1,8 +1,13 @@
+/* CSSファイル */
+.antialiased {
+    color: #000080;
+}
 /* カレンダー全体のスタイリング */
 table {
-    width: 100%;
+    width: 200%; /* カレンダーの幅を調整 */
     border-collapse: collapse;
     margin: 20px auto;
+    background-color: #f5f5f5; /* 薄いグレーの背景色に変更 */
 }
 
 table, th, td {
@@ -11,7 +16,7 @@ table, th, td {
 
 /* カレンダーの見出しスタイル */
 thead {
-    background-color: #333;
+    background-color: #C0C0C0;
     color: #fff;
     font-weight: bold;
 }

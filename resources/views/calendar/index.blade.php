@@ -1,34 +1,35 @@
+<!-- bladeファイル -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-
-        <title>Calendar</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="{{ asset('css/top.css') }}">
-
-    </head>
-    <body class="antialiased">
-        <h1>Life Path</h1>
-        <div class='calendar'>
-            <!-- マイページへのリンク -->
-            <a href="/mypage">マイページへ</a>
-            <h1>2023年9月</h1>
-        
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>日</th>
-                        <th>月</th>
-                        <th>火</th>
-                        <th>水</th>
-                        <th>木</th>
-                        <th>金</th>
-                        <th>土</th>
-                    </tr>
-                </thead>
-                <tbody>
+<head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{{ asset('/css/top.css') }}">
+</head>
+<body class="antialiased">
+    <h1>Life Path</h1>
+    <a href='/mypage'>マイページ</a>
+    <div class='calendar'>
+        <!-- 月を切り替えるボタン -->
+        <div class="month-switch">
+            <a href="/previous-month">前月</a>
+            <span>2023年9月</span>
+            <a href="/next-month">次月</a>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>日</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th>土</th>
+                </tr>
+            </thead>
+            <tbody>
                     <tr>
                         <td></td>
                         <td></td>
@@ -75,7 +76,7 @@
                         <td></td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
-    </body>
+        </table>
+    </div>
+</body>
 </html>

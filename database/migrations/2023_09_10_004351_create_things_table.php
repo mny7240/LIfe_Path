@@ -13,17 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('diary', function (Blueprint $table) {
-            $table->id(); // プライマリキー
-            $table->date('created_at'); // date型のカラム
-            $table->string('content'); // string型のカラム
-            $table->unsignedBigInteger('user_id'); // 外部キー
-            
-            // 外部キー制約
+        Schema::create('things', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('want');
+            $table->unsignedBigInteger('user_id'); // user_id カラムを追加
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diaries');
+        Schema::dropIfExists('things');
     }
 };

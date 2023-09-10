@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('places', function (Blueprint $table) {
-            $table->id(); // プライマリキー
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->boolean('executed_status');
+            $table->string('title');
             $table->string('content');
-            $table->unsignedBigInteger('user_id'); // 外部キー
-            
-            // 外部キー制約
+            $table->string('category');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('places');
+        Schema::dropIfExists('tasks');
     }
 };
