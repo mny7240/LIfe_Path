@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('calendar_thing', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('thing_id'); 
+            $table->unsignedBigInteger('thing_id'); // thing_id カラムを追加
             $table->unsignedBigInteger('calendar_id'); 
             $table->foreign('thing_id')->references('id')->on('things');
             $table->foreign('calendar_id')->references('id')->on('calendars');
