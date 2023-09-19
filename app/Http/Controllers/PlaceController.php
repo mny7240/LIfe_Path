@@ -9,6 +9,6 @@ class PlaceController extends Controller
 {
     public function index(Place $place)
     {
-        return $place->get();
+        return view('calendar/place');
     }
 }

@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calendars', function (Blueprint $table) {
-            $table->id();
+        Schema::table('calendars', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->comment('ユーザーID');
             $table->string('title')->comment('タイトル');
             $table->string('description')->nullable()->comment('概要');
@@ -31,6 +30,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendars');
+        Schema::table('calendars', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -9,6 +9,6 @@ class ThingController extends Controller
 {
     public function index(Thing $thing )
     {
-        return $calendardiary->get();
+        return view('calendar/thing');
     }
 }
