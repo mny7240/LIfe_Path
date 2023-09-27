@@ -1,0 +1,85 @@
+/* スタイルの設定 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.switch {
+    text-align: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.custom-button {
+    width: 150px; /* 幅を指定 */
+    height: 50px; /* 高さを指定 */
+    font-size: 18px; /* フォントサイズを指定 */
+    /* 他のスタイルプロパティを追加できます */
+}
+
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+textarea,
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit {
+    text-align: center;
+}
+
+.category table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.category table td {
+  width: 33.33%; /* 3つのセルを均等に分割 */
+  text-align: center; /* テキストを中央揃え */
+  vertical-align: top; /* 複数行テキストの場合、上揃えにする */
+  padding: 10px; /* セル内の余白を調整 */
+}
+
+
+/* カテゴリーのcss*/
+
+/* 日用品 */
+.material-symbols-outlined.big {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 35px;
+}
+
+

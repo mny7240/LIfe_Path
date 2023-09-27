@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calendar_place', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->boolean('executed_status'); // 実行しているかどうかのステータス
+            $table->string('title'); // タイトル
+            $table->text('content'); // 内容
+            $table->string('category'); // カテゴリ
+            $table->unsignedBigInteger('user_id'); // ユーザーID（外部キー）
             $table->timestamps();
-            $table->unsignedBigInteger('place_id');
-            $table->unsignedBigInteger('calendar_id'); 
-            $table->foreign('place_id')->references('id')->on('places');
-            $table->foreign('calendar_id')->references('id')->on('calendars');
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendar_place');
+        Schema::dropIfExists('tasks');
     }
 };

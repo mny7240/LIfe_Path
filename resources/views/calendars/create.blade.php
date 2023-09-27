@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content2')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,13 +11,12 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('calendars.store') }}">
                         @csrf
-
+                        
+                        
                         <div class="row mb-3">
                             <label for="title" class="col-md-4 col-form-label text-md-end">タイトル</label>
-
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="off">
-
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -27,10 +27,8 @@
                         
                         <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-end">概要</label>
-
                             <div class="col-md-6">
                                 <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description">{{ old('description') }}</textarea>
-
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

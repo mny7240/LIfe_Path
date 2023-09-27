@@ -8,7 +8,7 @@ use App\Http\Controllers\MyIntroductionController;
 use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\ThingController;
 use App\Http\Controllers\PlaceController;
-
+use App\Http\Controllers\CalendarDiaryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +23,11 @@ use App\Http\Controllers\PlaceController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
+//Route::get('/',[CalendarDiaryController::class,'example']);
 Route::get('/',[CalendarController::class,'login']);
 Route::resource('/calendars',App\Http\Controllers\CalendarController::class);
-Route::put('/calendars/{schedule}/updateByCalendar', [App\Http\Controllers\CalendarController::class,'updateByCalendar'])->name('schedules.updateByCalendar');
+Route::put('/calendars/{calendar}/updateByCalendar', [App\Http\Controllers\CalendarController::class,'updateByCalendar'])->name('calendars.updateByCalendar');
+Route::get('calendars/{id}/edit', [CalendarController::class,'edit'])->name('calendars.calendar_edit');
 
 
 Route::get('/mypage',[MypageController::class,'index']);
