@@ -13,12 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('places', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
+            $table->string('category'); // 支出カテゴリ
+            $table->string('memo'); // メモ
+            $table->integer('amount'); // 支出額
+            $table->date('expense_date'); // 支出日
+            $table->unsignedBigInteger('user_id'); // ユーザーID（外部キー）
             $table->timestamps();
-            $table->string('content');
-            $table->unsignedBigInteger('user_id');
+
+            // 外部キー制約の設定
             $table->foreign('user_id')->references('id')->on('users');
+            
         });
     }
 
@@ -29,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('places');
+        Schema::dropIfExists('expenses');
     }
 };

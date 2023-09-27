@@ -37,10 +37,10 @@ class CalendarController extends Controller
                 'description' => $calendar->description,
                 'start'       => $calendar->start_date,
                 'end'         => Carbon::parse($calendar->end_date)->addDay()->format('Y-m-d'),
-                'backgroundColor' => 'red',
-                'textColor' => 'yellow',
+                'backgroundColor' => 'blue',
+                'textColor' => 'white',
                 'borderColor' => 'black',
-                'url' => route('calendars.edit', $calendar->id)
+                'url' => route('calendars.calendar_edit', $calendar->id)
             ];
         }
         
@@ -53,13 +53,18 @@ class CalendarController extends Controller
             'start_date' => Carbon::parse($request->start_date),
             'end_date' => Carbon::parse($request->end_date)->subDay()
         ]);
-        $schedule->update($request->all());
+        $calendar->update($request->all());
         return response()->json(['success' => true]);
     }
     
     public function top(Calendar $calendar)
     {
         return view('calendars/index');
+    }
+    
+    public function edit($id)
+    {
+        return view('calendars/calendar_edit');
     }
     
 }

@@ -11,4 +11,8 @@ class CalendarDiaryController extends Controller
     {
         return $calendardiary->get();
     }
+    public function example()
+    {
+        return view('calendars/example');
+    }
 }

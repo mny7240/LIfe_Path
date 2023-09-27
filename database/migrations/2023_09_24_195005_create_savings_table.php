@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('calendar_diary', function (Blueprint $table) {
+        Schema::create('savings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // ユーザーID（外部キー）
+            $table->decimal('amount', 10, 2); // 金額
+            $table->date('deadline'); // 貯金目標日
             $table->timestamps();
-            $table->unsignedBigInteger('diary_id'); 
-            $table->unsignedBigInteger('calendar_id');
-            $table->foreign('diary_id')->references('id')->on('diaries');
-            $table->foreign('calendar_id')->references('id')->on('calendars');
-        });
+
+            // 外部キー制約の設定
+            $table->foreign('user_id')->references('id')->on('users');
+            });
     }
 
     /**
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendar_diary');
+        Schema::dropIfExists('savings');
     }
 };
